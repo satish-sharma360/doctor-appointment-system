@@ -1,0 +1,41 @@
+version: "3.9"
+
+services:
+  mongo:
+    image: mongo:7
+    restart: unless-stopped
+    volumes:
+      - mongo_data:/data/db
+    ports:
+      - "27017:27017"
+
+  backend:
+    build: ./backend
+    depends_on:
+      - mongo
+    env_file:
+      - ./backend/.env
+    ports:
+      - "8000:8000"
+    restart: unless-stopped
+
+  frontend:
+    build:
+      context: ./frontend
+      args:
+        VITE_BACKEND_URL: http://backend:8000
+    ports:
+      - "5173:80"
+    restart: unless-stopped
+
+  admin:
+    build:
+      context: ./admin
+      args:
+        VITE_BACKEND_URL: http://backend:8000
+    ports:
+      - "5174:80"
+    restart: unless-stopped
+
+volumes:
+  mongo_data:
