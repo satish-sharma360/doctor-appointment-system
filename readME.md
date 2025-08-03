@@ -16,7 +16,7 @@ This is a full-stack **MERN** (MongoDB, Express.js, React, Node.js) application 
 
 * User authentication and authorization.
 * Search and filter doctors by speciality.
-* Book, reschedule, and cancel appointments.
+* Book,and cancel appointments.
 * View doctor profiles with details like experience,speciality, and fees.
 * Admin panel for managing doctors and appointments.
 
@@ -25,6 +25,16 @@ This is a full-stack **MERN** (MongoDB, Express.js, React, Node.js) application 
 ## Getting Started
 
 Follow these steps to get the application up and running on your local machine.
+
+Access Admin panel
+
+ADMIN_EMAIL = adminemail@healpoint.com
+ADMIN_PASSWORD = healpoint12345678
+
+Access Doctor Panel
+
+DOCTOR_EMAIL = test@gmail.com
+DOCTOR_PASSWORD = testpassword
 
 
 ### Installation
